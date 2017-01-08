@@ -3,11 +3,19 @@
 module.exports = {
 
  findMinMax: function(aray) { 	
- 	var maxN = 0;
-	var minN = 0;
+ 	var maxN = aray[0];
+	var minN = aray[0];
 	var minMax = [];
-	minN = Math.min.apply(null,aray);
-	maxN = Math.max.apply(null,aray);
+	var num = aray.length
+	for (var i = 1; i<num; ++i){
+		if (aray[i] < minN) {
+			minN = aray[i]
+		}
+		else if (aray[i] > maxN) {
+			maxN = aray[i]
+		}
+	}
+
 	if (minN === maxN){
 		minMax.push(minN);
 	}
